@@ -4,6 +4,10 @@
  */
 package org.example.stack;
 
+import com.sun.media.jfxmedia.logging.Logger;
+import lombok.extern.slf4j.Slf4j;
+
+//@Slf4j
 public class Stack {
 
     private int maxSize;
@@ -28,11 +32,28 @@ public class Stack {
     public long pop() {
         if (isEmpty()) {
             throw new RuntimeException("The stack is empty.");
+            //optionally we can return -1;
         } else {
             int oldTop = topOfStack;      // temp variable to hold top of the stack
             topOfStack--;                // top of stack is popped out[removed]
             return stackArray[oldTop];  //  return the popped value
         }
+    }
+
+    public String pop(String str) {
+        int top = str.length();
+        Stack stack0 = new Stack(top);
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            stack0.push(ch);
+        }
+
+        String s = "";
+        while (!stack0.isEmpty()) {
+            String ch = stack0.pop(s);
+            s = s + ch;
+        }
+        return s;
     }
 
     public long peak() {
