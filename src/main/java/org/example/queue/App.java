@@ -14,6 +14,8 @@ public class App {
         queue.insert(7);
         queue.insert(9);
         queue.insert(11);
-        queue.view();
+        //queue.view();
+        queue.remove();
+
     }
 }

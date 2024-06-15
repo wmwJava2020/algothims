@@ -22,9 +22,9 @@ public class Queue {
     }
 
     public void insert(long j) {
-        if (j > maxSize) {
-            throw new RuntimeException(" Queue is of max in size!");
-        } else {
+        if (rear == maxSize - 1) { rear = -1;} // to reset rear back to -1
+        //else if (isFull()) {throw new RuntimeException(" Queue is of max in size!");} // catch error
+         else {
             rear++; //inserting elements is adds up rear value from -1 to 0
             queArray[rear] = j; //queue array size will be growing as element inserted to rear value
             nItem++;  // the queue counter also updated or increased.
@@ -42,9 +42,18 @@ public class Queue {
         return temp;
     }
 
-    public long peekFront(){
+    public long peekFront() {
         return queArray[front];
     }
+
+    public boolean isEmpty() {
+        return nItem == 0;
+    }
+
+    public boolean isFull() {
+        return nItem == maxSize;
+    }
+
     public void view() {
         System.out.print("[");
         for (int i = 0; i < queArray.length; i++) {
