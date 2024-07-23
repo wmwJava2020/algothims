@@ -6,7 +6,8 @@ public class BinarySearch1 {
 
         while(low <= high){
 
-            int mdl = (high + low)/2;
+            int mdl = (high + low)/2;  // middle pointer  <----p---->
+
             int mdlP = arr[mdl];
 
             if(num == mdl){
@@ -22,9 +23,10 @@ public class BinarySearch1 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3,4,5,6,7,8,9};
-        int num = 8;
-        int i = getBinaryNumber(arr, 8);
+                   //0,1,2,3,4,5,6, 7, 8, 9
+        int[] arr = {3,4,5,6,7,8,9,10,11,12};
+        int num = 5;
+        int i = getBinaryNumber(arr,num);
         System.out.println(i);
     }
 }
