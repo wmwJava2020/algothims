@@ -4,6 +4,9 @@
  */
 package org.example.udemy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OnSearchAndAddAlgorithms {
     public static void main(String[] args) {
         int[] Rx = {1, 3, 5, 7, 9, 11, 13};
@@ -23,6 +26,16 @@ public class OnSearchAndAddAlgorithms {
         }
         String str = "icanDoThatTutorialsNow";
         char[] reversed = getStringReversed(str);
+
+        int[] TEST = {1, 3, 5, 7, 9, 11, 13};
+        int INT = 8;
+        List<Integer[]> sum = getSumOfTwoIntegers(TEST, INT);
+        for(Integer[] ARR : sum){
+            for(int TTS : ARR){
+                System.out.print(TTS +"  ");
+            }
+            System.out.print(" ");
+        }
 
     }
 
@@ -96,9 +109,22 @@ public class OnSearchAndAddAlgorithms {
         String str0 = "";
 
         for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
-            System.out.print(" ");
+            //System.out.print(arr[i]);
+            //System.out.print(" ");
         }
         return arr;
+    }
+
+    private static List<Integer[]> getSumOfTwoIntegers(int[] arr, int N){
+        List<Integer[]> list = new ArrayList<>();
+
+        for(int x = 0; x < arr.length; x++){
+            for(int y = x + 1; y < arr.length; y++){
+                if(arr[x] + arr[y] == N){
+                    list.add(new Integer[]{arr[x],arr[y]});
+                }
+            }
+        }
+        return list;
     }
 }
