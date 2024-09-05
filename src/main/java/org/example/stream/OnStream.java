@@ -19,7 +19,8 @@ public class OnStream {
         //removeWhiteSpaceFromString("       Wo Daf Ras H  ");
         //removeDuplicateCharcter("wondafrashwon");
         //sortStringAlphabeticalOrder("facebook");
-        sortStringUsingArrays("facebo");
+        sortStringUsingArrays("hmbelgadcfnikjo");
+        sortStringValueAlphabeticaly("hmbelgadcfnikjo");
 
     }
 
@@ -43,7 +44,7 @@ public class OnStream {
 
     }
 
-    private static void findFirstNonUniqueCharcters(String str) {
+    private static void findFirstNonUniqueCharcter(String str) {
         for (int i = 0; i < str.length(); i++) {//outer-loop to travers in given input not checking the next non-repeated
             boolean unique = true;
             for (int j = 0; j < str.length(); j++) {//inner-loop used for comparison
@@ -86,7 +87,7 @@ public class OnStream {
             for (int j = i + 1; j < charArr.length; j++) {
                 if (charArr[i] > charArr[j]) { // facebook --> arr[i] =f, arr[j]=a
                     temp = charArr[i]; // store char at index = i into temp variable here SWAPPED, comprising is based ASCII value of the character
-                    charArr[i] = charArr[j]; // replace the small position with the highest, i > j
+                    charArr[i] = charArr[j]; // replace the small position j with the highest i, i.e.,  i > j
                     charArr[j] = temp;
                 }
             }
@@ -98,5 +99,21 @@ public class OnStream {
         char[] charArrays = str.toCharArray();
          Arrays.sort(charArrays);
         System.out.println(charArrays);
+    }
+
+    private static void sortStringValueAlphabeticaly(String str0){
+
+        char[] chars = str0.toCharArray();
+        char temp = 0;
+        for(int i = 0 ; i < chars.length; i++){
+            for(int j = i + 1; j < chars.length;j++){
+                if(chars[i] > chars[j]){  // here i > j
+                    temp = chars[i];
+                    chars[i] = chars[j];
+                    chars[j] = temp;
+                }
+            }
+        }
+        System.out.println(new String(chars));
     }
 }
