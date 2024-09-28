@@ -27,6 +27,15 @@ public class BinarySearch1 {
         int[] arr = {3,4,5,6,7,8,9,10,11,12};
         int num = 5;
         int i = getBinaryNumber(arr,num);
-        System.out.println(i);
+        //System.out.println(i);
+
+        getMathsFunctions(15390);
+    }
+
+    private static void getMathsFunctions(int num){
+        int numberOfDigits = (int) Math.log10(num) + 1;
+        System.out.println("Num of Digits : "+numberOfDigits);
+        int pow = (int) Math.pow(3, 4); // 3 * 3 * 3 * 3
+        System.out.println("Power of : "+pow);
     }
 }
