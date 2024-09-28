@@ -66,14 +66,14 @@ public class OnSearchAndAddAlgorithms {
     private static int binarySearchAlgorithm(int[] arr, int TARGET) {
 
         //int[] arr = {12,19,27,31,34,39,41,47,[49],60,54,56,63,72,76,78,90,99};
-        int tarGet = 76;
+        //int tarGet = 76;
 
         int low = 0;  // lower limit or boundaries
         int high = arr.length - 1; // upper limit boundaries
 
         while (low <= high) {
 
-            //get index middle postions
+            //get index middle position
             int index = (low + high) / 2;
 
             // get the number correspondence to index
@@ -82,7 +82,7 @@ public class OnSearchAndAddAlgorithms {
             if (TARGET == number) {
                 return index;
             }
-            if (TARGET < number) { // target number is greater than middle index value to search to the ---right-->
+            if (TARGET < number) { // target number is greater than the middle index value to search to the ---right-->
                 high = index - 1;
             }
             if (TARGET > number) { //target is less than middle index value so search towards the left < --- left---

@@ -50,7 +50,7 @@ public class Counter {
     }
 
     public int getElements(int[] arr, int index) {
-        // this algorithm return the data at the given index
+        // this algorithm returns the data at the given index
         // hence, called CONSTANT time algorithm
         // it takes constant TIME regardless of the size
         return arr[index];
@@ -60,7 +60,7 @@ public class Counter {
 
         // LINEAR - the time to run this algorithm is linearly dependent on the size of the input.
         // the time is takes increase as the size of input is increases.
-        // this algorithm iterate over the input ONCE hence called linear algorithm
+        // this algorithm iterates over the input ONCE hence called linear algorithm
 
         //int count = 0;
 
