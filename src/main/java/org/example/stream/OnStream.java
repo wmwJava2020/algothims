@@ -19,8 +19,8 @@ public class OnStream {
         //removeWhiteSpaceFromString("       Wo Daf Ras H  ");
         //removeDuplicateCharcter("wondafrashwon");
         //sortStringAlphabeticalOrder("facebook");
-        sortStringUsingArrays("hmbelgadcfnikjo");
-        sortStringValueAlphabeticaly("hmbelgadcfnikjo");
+        //sortStringUsingArrays("hmbelgadcfnikjo");
+        //sortStringValueAlphabeticaly("hmbelgadcfnikjo");
 
     }
 
@@ -40,7 +40,8 @@ public class OnStream {
 
     private static void convertStringToArray(String str) {
         char[] myChar = str.toCharArray();
-        System.out.println(myChar[0]);
+        for(char word : myChar){
+        System.out.print(word+ " ");}
 
     }
 

@@ -4,11 +4,16 @@
  */
 package org.example.array;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class OnArrayCoding {
@@ -40,7 +45,17 @@ public class OnArrayCoding {
 
         //findMaxAndMinNumbers();
 
-        reversStringUsingStream();
+        //reversStringUsingStream();
+
+        //findFrequenceyOfCharacters();
+
+        //findAgeOfPersonGivenAge();
+
+        //findAndRemoveDuplicatesFromArray();
+
+        //findTheLastElementsOfString();
+
+        //reversStringInputs("Wondafrash");
 
     }
 
@@ -125,5 +140,55 @@ public class OnArrayCoding {
         System.out.println(stringList);
 
 
+    }
+
+    private static void findFrequenceyOfCharacters(){
+        String str = "wondafrashwafr";
+
+        IntStream intStream = str.chars(); // A sequence of primitive int-valued elements supporting sequential and parallel aggregate operations.
+
+        Stream<Character> characterStream = intStream.mapToObj(c -> (char) c);
+
+        Map<Character, Long> cnt = characterStream
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        System.out.print(cnt);
+
+
+    }
+
+    private static void findAgeOfPersonGivenAge(){
+        LocalDate oldYear = LocalDate.parse("1979-03-12");
+
+        LocalDate newYear = LocalDate.now();
+
+        Period between = Period.between(oldYear, newYear);
+
+        System.out.println(between.getYears());
+    }
+
+    private static void findAndRemoveDuplicatesFromArray(){
+        List<Integer> list = Arrays.asList(6,0,4,1,4,6,8,9,0,1,3,4,6,7,8,9);
+
+        List<Integer> collected = list.stream().distinct().sorted().collect(Collectors.toList());
+
+        System.out.println(collected);
+    }
+
+    private static void findTheLastElementsOfString(){
+        List<String> list = Arrays.asList("one","ONE","four","FOUR","nine","NINE","ten","three");
+
+        //List<String> skip = list.stream().skip(list.size() - 2).collect(Collectors.toList());
+        //System.out.println(skip);
+        String str = list.stream().skip(list.size() - 1).findFirst().get();
+        System.out.print(str);
+    }
+
+    private static void reversStringInputs(String s){
+        String revStr = "";
+        for(int i = 0; i < s.length();i++){
+            revStr = s.charAt(i) + revStr;
+
+        }
+        System.out.println(revStr + " ");
     }
 }
